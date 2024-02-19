@@ -621,13 +621,15 @@ class Blocks {
             if (block.fields && Object.keys(block.fields).length > 0 &&
                 block.opcode !== 'data_variable' && block.opcode !== 'data_listcontents') {
 
-                // This block has an argument which needs to get separated out into
-                // multiple monitor blocks with ids based on the selected argument
+                // 该块有一个参数，需要根据所选参数将其分成多个具有 id 的监视器块
                 const newId = getMonitorIdForBlockWithArgs(block.id, block.fields);
-                // Note: we're not just constantly creating a longer and longer id everytime we check
-                // the checkbox because we're using the id of the block in the flyout as the base
+                
+                // Note: we're not just constantly creating a longer and longer id
+                // everytime we check the checkbox because we're using the id of the block in the flyout as the base
+                // 注意：我们不仅仅是在每次选中复选框时不断创建越来越长的 ID，因为我们使用弹出窗口中块的 ID 作为基础
 
                 // check if a block with the new id already exists, otherwise create
+                // 检查具有新 id 的块是否已经存在，否则创建
                 let newBlock = this.runtime.monitorBlocks.getBlock(newId);
                 if (!newBlock) {
                     newBlock = JSON.parse(JSON.stringify(block));
@@ -794,6 +796,7 @@ class Blocks {
      * @param {!string} blockId Id of block to delete
      */
     deleteBlock (blockId) {
+        console.log('deleteBlock?????????????????');
         // @todo In runtime, stop threads running on this script.
 
         // Get block

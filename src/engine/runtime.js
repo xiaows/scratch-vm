@@ -1054,6 +1054,10 @@ class Runtime extends EventEmitter {
             return this._convertSeparatorForScratchBlocks(blockInfo);
         }
 
+        if (blockInfo.blockType === BlockType.LABEL) {
+            return this._convertLabelForScratchBlocks(blockInfo);
+        }
+
         if (blockInfo.blockType === BlockType.BUTTON) {
             return this._convertButtonForScratchBlocks(blockInfo);
         }
@@ -1223,6 +1227,14 @@ class Runtime extends EventEmitter {
         return {
             info: blockInfo,
             xml: '<sep gap="36"/>'
+        };
+    }
+
+
+    _convertLabelForScratchBlocks (blockInfo) {
+        return {
+            info: blockInfo,
+            xml: `<label text="${blockInfo.text}"></label>`
         };
     }
 

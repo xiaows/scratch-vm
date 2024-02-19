@@ -44,7 +44,11 @@ const BlockType = {
     /**
      * General reporter with numeric or string value
      */
-    REPORTER: 'reporter'
+    REPORTER: 'reporter',
+
+    LABEL: 'label'
+
+
 };
 
 module.exports = BlockType;

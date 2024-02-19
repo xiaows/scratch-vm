@@ -292,6 +292,16 @@ class Scratch3PenBlocks {
             blockIconURI: blockIconURI,
             blocks: [
                 {
+                    func: 'MAKE_A_VARIABLE',
+                    blockType: BlockType.BUTTON,
+                    text: 'make a variable (CoreEx)'
+                },
+                {
+                    blockType: BlockType.LABEL,
+                    text: 'LABEL'
+                },
+                {
+                    
                     opcode: 'clear',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
